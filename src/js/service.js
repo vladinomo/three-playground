@@ -7,7 +7,7 @@ import {
   Mesh,
 } from 'three'
 
-class Controller {
+class Service {
   constructor(canvas) {
     this.width = window.innerWidth
     this.height = window.innerHeight
@@ -36,4 +36,4 @@ class Controller {
   }
 }
 
-export default Controller
+export default Service
