@@ -1,0 +1,5 @@
+Todo
+* window.onResizeでcanvasの縦横を再設定する
+* Reactサンプルページ用意
+* 既存のページとReactサンプルページのリンクを用意する
+* APIからフェッチしたListItemをthreeオブジェクトにマッピングして表示するサンプル作成
