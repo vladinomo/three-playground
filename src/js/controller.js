@@ -14,9 +14,10 @@ class Controller {
 
     this.scene = new Scene()
     this.camera = new PerspectiveCamera(75, this.width / this.height, 0.1, 1000)
-    this.geometry = new BoxGeometry(400, 400, 400)
-    this.material = new MeshNormalMaterial()
-    this.box = new Mesh(this.geometry, this.material)
+    this.box = new Mesh(
+      new BoxGeometry(400, 400, 400),
+      new MeshNormalMaterial()
+    )
     this.renderer = new WebGLRenderer({ canvas })
 
     this.renderer.setSize(this.width, this.height)
