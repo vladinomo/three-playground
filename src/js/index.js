@@ -1,6 +1,12 @@
 import Service from './service'
 
 const canvas = document.getElementById('canvas')
-const c = new Service(canvas)
+const threeAnimationService = new Service(canvas)
 
-c.tick()
+const render = () => {
+  threeAnimationService.updateRotate()
+  threeAnimationService.update()
+  requestAnimationFrame(render)
+}
+
+render()

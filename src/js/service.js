@@ -24,15 +24,18 @@ class Service {
     this.camera.position.set(0, 0, +1000)
     this.scene.add(this.box)
 
-    this.tick = this.tick.bind(this)
+    this.update = this.update.bind(this)
+    this.updateRotate = this.updateRotate.bind(this)
   }
 
-  tick() {
+  updateRotate() {
     this.box.rotation.y += 0.01
     this.box.rotation.x += 0.01
     this.box.rotation.z += 0.01
+  }
+
+  update() {
     this.renderer.render(this.scene, this.camera)
-    requestAnimationFrame(this.tick)
   }
 }
 
