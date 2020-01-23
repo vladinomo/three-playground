@@ -1,4 +1,6 @@
 import Controller from './controller'
 
-const c = new Controller()
+const canvas = document.getElementById('canvas')
+const c = new Controller(canvas)
+
 c.tick()

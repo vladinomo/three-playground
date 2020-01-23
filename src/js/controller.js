@@ -8,7 +8,7 @@ import {
 } from 'three'
 
 class Controller {
-  constructor() {
+  constructor(canvas) {
     this.width = window.innerWidth
     this.height = window.innerHeight
 
@@ -17,13 +17,11 @@ class Controller {
     this.geometry = new BoxGeometry(400, 400, 400)
     this.material = new MeshNormalMaterial()
     this.box = new Mesh(this.geometry, this.material)
-    this.renderer = new WebGLRenderer()
+    this.renderer = new WebGLRenderer({ canvas })
 
     this.renderer.setSize(this.width, this.height)
     this.camera.position.set(0, 0, +1000)
     this.scene.add(this.box)
-
-    document.getElementById('root').appendChild(this.renderer.domElement)
 
     this.tick = this.tick.bind(this)
   }
