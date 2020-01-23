@@ -12,6 +12,7 @@ class Service {
     this.width = window.innerWidth
     this.height = window.innerHeight
 
+    //Todo インスタンス初期化をうまく切り出したい
     this.scene = new Scene()
     this.camera = new PerspectiveCamera(75, this.width / this.height, 0.1, 1000)
     this.box = new Mesh(
