@@ -9,10 +9,17 @@ import {
 
 class Service {
   constructor(canvas) {
+    this.init.bind(this)
+    this.update = this.update.bind(this)
+    this.updateRotate = this.updateRotate.bind(this)
+
+    this.init(canvas)
+  }
+
+  init(canvas) {
     this.width = window.innerWidth
     this.height = window.innerHeight
 
-    //Todo インスタンス初期化をうまく切り出したい
     this.scene = new Scene()
     this.camera = new PerspectiveCamera(75, this.width / this.height, 0.1, 1000)
     this.box = new Mesh(
@@ -24,9 +31,6 @@ class Service {
     this.renderer.setSize(this.width, this.height)
     this.camera.position.set(0, 0, +1000)
     this.scene.add(this.box)
-
-    this.update = this.update.bind(this)
-    this.updateRotate = this.updateRotate.bind(this)
   }
 
   updateRotate() {
