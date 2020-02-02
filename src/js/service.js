@@ -41,7 +41,6 @@ class Service {
   }
 
   onWindowResize(width, height) {
-    console.log(width, height)
     this.width = width
     this.height = height
 
