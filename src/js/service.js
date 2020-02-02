@@ -12,6 +12,7 @@ class Service {
     this.init.bind(this)
     this.update = this.update.bind(this)
     this.updateRotate = this.updateRotate.bind(this)
+    this.onWindowResize = this.onWindowResize.bind(this)
 
     this.init(canvas)
   }
@@ -37,6 +38,17 @@ class Service {
     this.box.rotation.y += 0.01
     this.box.rotation.x += 0.01
     this.box.rotation.z += 0.01
+  }
+
+  onWindowResize(width, height) {
+    console.log(width, height)
+    this.width = width
+    this.height = height
+
+    this.camera.aspect = width / height
+    this.camera.updateProjectionMatrix()
+
+    this.renderer.setSize(width, height)
   }
 
   update() {

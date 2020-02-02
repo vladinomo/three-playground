@@ -9,4 +9,13 @@ const render = () => {
   requestAnimationFrame(render)
 }
 
+addEventListener('resize', () => {
+  canvas.style.width = '100%'
+  canvas.style.height = '100%'
+  const width = canvas.offsetWidth
+  const height = canvas.offsetHeight
+
+  threeAnimationService.onWindowResize(width, height)
+})
+
 render()
