@@ -1,5 +1,5 @@
 Todo
-* window.onResizeでcanvasの縦横を再設定する
+* window.onResizeでcanvasの縦横を再設定する → done
 * Reactサンプルページ用意
 * 既存のページとReactサンプルページのリンクを用意する
 
