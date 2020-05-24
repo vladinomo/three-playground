@@ -23,21 +23,34 @@ class Service {
 
     this.scene = new Scene()
     this.camera = new PerspectiveCamera(75, this.width / this.height, 0.1, 1000)
-    this.box = new Mesh(
-      new BoxGeometry(400, 400, 400),
-      new MeshNormalMaterial()
-    )
+    this.addBoxes(5)
     this.renderer = new WebGLRenderer({ canvas })
 
     this.renderer.setSize(this.width, this.height)
     this.camera.position.set(0, 0, +1000)
-    this.scene.add(this.box)
+    this.boxes.forEach(b => this.scene.add(b))
+  }
+
+  addBoxes(n) {
+    this.boxes = [...Array(n)].map(
+      _ => new Mesh(new BoxGeometry(100, 100, 100), new MeshNormalMaterial())
+    )
+
+    this.boxes.forEach(b => {
+      b.position.set(
+        parseInt(Math.random() * 500, 10) - 250,
+        parseInt(Math.random() * 500, 10) - 250,
+        parseInt(Math.random() * 500, 10) - 250
+      )
+    })
   }
 
   updateRotate() {
-    this.box.rotation.y += 0.01
-    this.box.rotation.x += 0.01
-    this.box.rotation.z += 0.01
+    this.boxes.forEach(b => {
+      b.rotation.y += 0.01
+      b.rotation.x += 0.01
+      b.rotation.z += 0.01
+    })
   }
 
   onWindowResize(width, height) {
